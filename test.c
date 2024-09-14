@@ -60,24 +60,42 @@ int main() {
     printMatrix(matrix1, rows, cols);
 
     // Test 2: Matrix addition
-    printf("Matrix 1:\n");
-    printMatrix(matrix1, rows, cols);
+    //printf("Matrix 1:\n");
+    //printMatrix(matrix1, rows, cols);
     printf("Matrix 2:\n");
     printMatrix(matrix2, rows, cols);
 
-    float **resultMatrix = addMatrices(matrix1, matrix2, rows, cols);
+    //float **resultMatrix = addMatrices(matrix1, matrix2, rows, cols);
 
-    printf("Result of adding Matrix 1 and Matrix 2:\n");
-    printMatrix(resultMatrix, rows, cols);
+    //printf("Result of adding Matrix 1 and Matrix 2:\n");
+    //printMatrix(resultMatrix, rows, cols);
 
     // Test 3: Dot product
+
+    // Initialize matrix1 to match example in comments below
+    //matrix1[0][0] = 2.0; matrix1[0][1] = 4.0;
+    //matrix1[1][0] = 6.0; matrix1[1][1] = 8.0;
+    ////////////////////////////////////////////
     float dotProduct = calculateMatrixDotProduct(matrix1, matrix2, rows, cols);
     printf("Dot product of Matrix 1 and Matrix 2: %.2f\n", dotProduct);
 
+    printf("T3 extra tests\n");
+
+    matrix1[0][0] = 5.0; matrix1[0][1] = 6.0;
+    matrix1[1][0] = 9.0; matrix1[1][1] = 3.0;
+    printf("Matrix 1:\n");
+    printMatrix(matrix1, rows, cols);
+
+    matrix2[0][0] = 8.0; matrix2[0][1] = 6.0;
+    matrix2[1][0] = 3.0; matrix2[1][1] = 7.0;
+    printf("Matrix 2:\n");
+    printMatrix(matrix2, rows, cols);
+    dotProduct = calculateMatrixDotProduct(matrix1, matrix2, rows, cols);
+    printf("Dot product of Matrix 1 and Matrix 2: %.2f\n", dotProduct);
     // Free allocated memory
     freeMatrix(matrix1, rows);
     freeMatrix(matrix2, rows);
-    freeMatrix(resultMatrix, rows);
+    //freeMatrix(resultMatrix, rows);
 
     return 0;
 }
